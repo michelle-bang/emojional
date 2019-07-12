@@ -10,24 +10,24 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
+    }
     
     @IBAction func showMessage(sender: UIButton){
+        let emojis = ["🌞": "sun", "🌚": "moon"]
+        
+
+        let selectedEmotion = sender.titleLabel?.text
+        
         //a message pops up when a user clicks a button
-        let alertController = UIAlertController(title: "test", message: "test", preferredStyle: UIAlertController.Style.alert)
+        let alertController = UIAlertController(title: "Hey!", message: emojis[selectedEmotion!], preferredStyle: UIAlertController.Style.alert)
         
         alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
             
         present(alertController, animated: true, completion: nil)
     }
-    
-    
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-    }
-
-
 }
+
 
